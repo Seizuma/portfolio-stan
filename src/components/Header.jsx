@@ -69,7 +69,7 @@ const Header = () => {
   }, []);
 
   return (
-    <Navbar scrolled={scrolled}>
+    <Navbar scrolled={scrolled ? "true" : undefined}>
       <Spacer />
       <Logo>Stan</Logo>
       <NavLinks>
@@ -78,7 +78,7 @@ const Header = () => {
           smooth={true}
           duration={500}
           spy={true}
-          active={activeSection === 'profile'}
+          active={activeSection === 'profile' ? "true" : undefined}
           onSetActive={() => setActiveSection('profile')}
         >
           Profil
@@ -88,7 +88,7 @@ const Header = () => {
           smooth={true}
           duration={500}
           spy={true}
-          active={activeSection === 'skills'}
+          active={activeSection === 'skills' ? "true" : undefined}
           onSetActive={() => setActiveSection('skills')}
         >
           Compétences
@@ -98,7 +98,7 @@ const Header = () => {
           smooth={true}
           duration={500}
           spy={true}
-          active={activeSection === 'education'}
+          active={activeSection === 'education' ? "true" : undefined}
           onSetActive={() => setActiveSection('education')}
         >
           Études
@@ -108,7 +108,7 @@ const Header = () => {
           smooth={true}
           duration={500}
           spy={true}
-          active={activeSection === 'projects'}
+          active={activeSection === 'projects' ? "true" : undefined}
           onSetActive={() => setActiveSection('projects')}
         >
           Projets
@@ -118,7 +118,7 @@ const Header = () => {
           smooth={true}
           duration={500}
           spy={true}
-          active={activeSection === 'contact'}
+          active={activeSection === 'contact' ? "true" : undefined}
           onSetActive={() => setActiveSection('contact')}
         >
           Contact
