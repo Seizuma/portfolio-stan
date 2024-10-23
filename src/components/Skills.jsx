@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaPython, FaDatabase } from 'react-icons/fa';
+import { SiCsharp, SiFlask, SiElectron, SiExpress, SiPostman, SiTrello, SiFigma, SiXampp, SiReactos } from 'react-icons/si';
 
 const SkillsContainer = styled.div`
   text-align: center;
@@ -75,6 +76,14 @@ const Skills = () => {
             <SkillIcon><FaReact /></SkillIcon>
             <SkillName>React</SkillName>
           </SkillCard>
+          <SkillCard>
+            <SkillIcon><SiElectron /></SkillIcon>
+            <SkillName>Electron</SkillName>
+          </SkillCard>
+          <SkillCard>
+            <SkillIcon><SiReactos /></SkillIcon>
+            <SkillName>React Native</SkillName>
+          </SkillCard>
         </SkillsGrid>
       </Category>
 
@@ -83,8 +92,28 @@ const Skills = () => {
         <CategoryTitle>Backend</CategoryTitle>
         <SkillsGrid>
           <SkillCard>
+            <SkillIcon><SiCsharp /></SkillIcon>
+            <SkillName>C#</SkillName>
+          </SkillCard>
+          <SkillCard>
+            <SkillIcon><FaPython /></SkillIcon>
+            <SkillName>Python</SkillName>
+          </SkillCard>
+          <SkillCard>
+            <SkillIcon><SiFlask /></SkillIcon>
+            <SkillName>Flask</SkillName>
+          </SkillCard>
+          <SkillCard>
             <SkillIcon><FaNodeJs /></SkillIcon>
             <SkillName>Node.js</SkillName>
+          </SkillCard>
+          <SkillCard>
+            <SkillIcon><SiExpress /></SkillIcon>
+            <SkillName>Express.js</SkillName>
+          </SkillCard>
+          <SkillCard>
+            <SkillIcon><FaDatabase /></SkillIcon>
+            <SkillName>SQL</SkillName>
           </SkillCard>
         </SkillsGrid>
       </Category>
@@ -96,6 +125,22 @@ const Skills = () => {
           <SkillCard>
             <SkillIcon><FaGitAlt /></SkillIcon>
             <SkillName>Git</SkillName>
+          </SkillCard>
+          <SkillCard>
+            <SkillIcon><SiPostman /></SkillIcon>
+            <SkillName>Postman</SkillName>
+          </SkillCard>
+          <SkillCard>
+            <SkillIcon><SiTrello /></SkillIcon>
+            <SkillName>Trello</SkillName>
+          </SkillCard>
+          <SkillCard>
+            <SkillIcon><SiFigma /></SkillIcon>
+            <SkillName>Figma</SkillName>
+          </SkillCard>
+          <SkillCard>
+            <SkillIcon><SiXampp /></SkillIcon>
+            <SkillName>Suite AMP (XAMPP)</SkillName>
           </SkillCard>
         </SkillsGrid>
       </Category>
