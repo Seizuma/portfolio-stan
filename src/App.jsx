@@ -5,25 +5,31 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import { Container, Section } from './styles';
+import { useSpring, animated } from 'react-spring';
 
 function App() {
+  const fadeIn = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 200 });
+
   return (
-    <div className="App" style={{ backgroundColor: '#000', color: '#f5f5dc' }}>
+    <Container>
       <Header />
-      <section id="profile">
+      <Section as={animated.section} style={fadeIn} id="profile">
         <Profile />
-      </section>
-      <section id="skills">
+      </Section>
+      <Section as={animated.section} style={fadeIn} id="skills">
         <Skills />
-      </section>
-      <section id="education">
+      </Section>
+      <Section as={animated.section} style={fadeIn} id="education">
         <Education />
-      </section>
-      <section id="projects">
+      </Section>
+      <Section as={animated.section} style={fadeIn} id="projects">
         <Projects />
-      </section>
-      <Contact />
-    </div>
+      </Section>
+      <Section as={animated.section} style={fadeIn} id="contact">
+        <Contact />
+      </Section>
+    </Container>
   );
 }
 
