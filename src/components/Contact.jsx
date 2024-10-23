@@ -9,7 +9,7 @@ const ContactContainer = styled.div`
   justify-content: center; /* Centrer verticalement */
   padding: 20px;
   background: #000;
-  color: #f5f5dc;
+//   color: #f5f5dc;
 `;
 
 const ContactInfo = styled.p`
