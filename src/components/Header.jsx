@@ -27,11 +27,12 @@ const NavLinks = styled.div`
 
 const NavLink = styled(ScrollLink)`
   color: ${(props) => (props.active ? '#daa520' : '#fff')};
-  margin: 0 15px;
+  margin: 0 25px;
   text-decoration: ${(props) => (props.active ? 'underline' : 'none')};
   font-weight: ${(props) => (props.active ? 'bold' : 'normal')};
   cursor: pointer;
   transition: color 0.3s ease;
+  font-size: 20px;
 
   &:hover {
     color: #daa520;
@@ -45,7 +46,7 @@ const Logo = styled.h1`
 `;
 
 const Spacer = styled.div`
-  width: 30%;
+  width: 20%;
 `;
 
 const Header = () => {
