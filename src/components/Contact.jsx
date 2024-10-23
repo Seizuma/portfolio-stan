@@ -31,8 +31,8 @@ const Contact = () => {
     <ContactContainer>
       <h2>Contactez-moi</h2>
       <ContactInfo>
-        Vous pouvez me contacter à cette adresse email : 
-        <ContactLink href="mailto:stanleguen.pro@gmail.com">stanleguen.pro@gmail.com</ContactLink>
+        Vous pouvez me contacter à cette adresse email :
+        <ContactLink href="mailto:stanleguen.pro@gmail.com"> stanleguen.pro@gmail.com</ContactLink>
       </ContactInfo>
     </ContactContainer>
   );
