@@ -51,6 +51,8 @@ const Photo = styled.img`
   max-width: 1000px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  user-select: none;
+  pointer-events: none;
 `;
 
 const Profile = () => {
