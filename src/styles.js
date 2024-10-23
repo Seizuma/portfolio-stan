@@ -7,18 +7,13 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center; /* Centrer verticalement le contenu */
-  border-bottom: 1px solid #333;
-  &:nth-child(odd) {
-    background-color: #111;
-  }
-  &:nth-child(even) {
-    background-color: #000;
-  }
+  // border-bottom: 1px solid #333;
+  background-color: #000;
 `;
 
 export const Container = styled.div`
   background-color: #000;
-  color: #f5f5dc;
+  // color: #f5f5dc;
   padding-top: 80px; /* Pour compenser la hauteur du header */
   height: 100%;
 `;
