@@ -39,10 +39,14 @@ const ProjectTitle = styled.h3`
   margin-top: 10px;
 `;
 
+const ProjectHeader = styled.h2`
+  font-size: 50px;
+`
+
 const Projects = () => {
   return (
     <ProjectsContainer>
-      <h2>Projets</h2>
+        <ProjectHeader><h2>Projets</h2></ProjectHeader>
       <ProjectGrid>
         <ProjectCard>
           <ProjectIcon><FaCode /></ProjectIcon>
