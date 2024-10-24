@@ -111,7 +111,7 @@ const Header = () => {
           active={activeSection === 'education' ? "true" : undefined}
           onSetActive={() => setActiveSection('education')}
         >
-          Études
+          Experience
         </NavLink>
         <NavLink
           to="projects"
