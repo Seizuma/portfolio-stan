@@ -95,7 +95,7 @@ const Profile = () => {
         <Role>Développeur Full Stack</Role>
       </ProfileText>
       <ProfilePhoto>
-        <Photo src="../../pictures/Pic1.png" alt="Photo de moi" />
+        <Photo src={`${process.env.PUBLIC_URL}/pictures/Pic1.png`} alt="Photo de moi" />
       </ProfilePhoto>
     </ProfileContainer>
   );

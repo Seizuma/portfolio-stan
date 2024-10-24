@@ -137,7 +137,7 @@ const AboutMe = () => {
       <Anchor id="aboutme" />
       <AboutMeContainer className="fade-in">
         <PhotoContainer>
-          <Photo src="../../pictures/Pic2.png" alt="Photo de moi" />
+          <Photo src={`${process.env.PUBLIC_URL}/pictures/Pic2.png`} alt="Photo de moi" />
         </PhotoContainer>
 
         <AboutText>
@@ -154,7 +154,7 @@ const AboutMe = () => {
             <ExperienceText>2 ans d'expérience professionnelle</ExperienceText>
           </ExperienceContainer>
 
-          <DownloadButton href="../../CV_2024-09-14_Stan_Le Guen.pdf" download>
+          <DownloadButton href={`${process.env.PUBLIC_URL}/CV_2024-09-14_Stan_Le_Guen.pdf`} download>
             Télécharger mon CV
           </DownloadButton>
         </AboutText>
