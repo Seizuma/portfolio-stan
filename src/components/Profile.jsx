@@ -58,6 +58,18 @@ const Role = styled.p`
   }
 `;
 
+const Description = styled.p`
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-style: italic;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem; /* Réduire la taille du texte sur mobile */
+    margin-top: 15px;
+  }
+`;
+
 const ProfilePhoto = styled.div`
   width: 40%;
   display: flex;
@@ -93,6 +105,12 @@ const Profile = () => {
           Je suis <span>Stan Le Guen</span>
         </Name>
         <Role>Développeur Full Stack</Role>
+        <Description>
+          Je suis un professionnel du développement, âgé de 21 ans et diplômé CESI.
+        </Description>
+        <Description>
+          Passionné par les défis du domaine, je suis toujours prêt à m'améliorer et à concrétiser mes aspirations professionnelles.
+        </Description>
       </ProfileText>
       <ProfilePhoto>
         <Photo src={`${process.env.PUBLIC_URL}/pictures/Pic1.png`} alt="Photo de moi" />
