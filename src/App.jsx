@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Profile from './components/Profile';
+import AboutMe from './components/AboutMe';
 import Skills from './components/Skills';
 import Education from './components/Education';
 import Projects from './components/Projects';
@@ -16,6 +17,9 @@ function App() {
       <Header />
       <Section as={animated.section} style={fadeIn} id="profile">
         <Profile />
+      </Section>
+      <Section as={animated.section} style={fadeIn} id="aboutme">
+        <AboutMe />
       </Section>
       <Section as={animated.section} style={fadeIn} id="skills">
         <Skills />
