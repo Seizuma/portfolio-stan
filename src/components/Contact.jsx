@@ -28,7 +28,7 @@ const ContactLink = styled.a`
 
 const Contact = () => {
   return (
-    <ContactContainer>
+    <ContactContainer className="fade-in">
       <h2>Contactez-moi</h2>
       <ContactInfo>
         Vous pouvez me contacter à cette adresse email :

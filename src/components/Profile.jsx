@@ -3,9 +3,7 @@ import styled from 'styled-components';
 
 const ProfileContainer = styled.div`
   display: flex;
-//   justify-content: space-between;
   align-items: center;
-//   padding: 10px 10px;
   background: #000;
   min-height: 50vh;
 `;
@@ -24,9 +22,7 @@ const Heading = styled.h2`
 const Name = styled.p`
   font-size: 4rem;
   font-weight: bold;
-//   color: #f5f5dc;
   margin: 10px 0;
-
 
   & > span {
     color: #daa520; 
@@ -35,7 +31,6 @@ const Name = styled.p`
 
 const Role = styled.p`
   font-size: 2.5rem;
-//   color: #f5f5dc;
 `;
 
 const ProfilePhoto = styled.div`
@@ -57,7 +52,7 @@ const Photo = styled.img`
 
 const Profile = () => {
   return (
-    <ProfileContainer>
+    <ProfileContainer className="fade-in">
       <ProfileText>
         <Heading>Bienvenue !</Heading>
         <Name>
@@ -66,7 +61,6 @@ const Profile = () => {
         <Role>Développeur Full Stack</Role>
       </ProfileText>
       <ProfilePhoto>
-        {/* Ajoute ta photo ici */}
         <Photo src="../../pictures/Pic1.png" alt="Photo de moi" />
       </ProfilePhoto>
     </ProfileContainer>

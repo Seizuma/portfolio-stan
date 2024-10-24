@@ -45,7 +45,7 @@ const ProjectHeader = styled.h2`
 
 const Projects = () => {
   return (
-    <ProjectsContainer>
+    <ProjectsContainer className="fade-in">
         <ProjectHeader><h2>Projets</h2></ProjectHeader>
       <ProjectGrid>
         <ProjectCard>
