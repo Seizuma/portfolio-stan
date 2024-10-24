@@ -1,16 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+`;
+
 const SectionContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  padding: 50px 20px;
+  width: 100%;
   flex-wrap: wrap;
 
   @media (max-width: 768px) {
     flex-direction: column; /* Empile les colonnes sur mobile */
     padding: 20px;
+  }
+`;
+
+const ExperienceTitle = styled.h1`
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 50px;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem; /* Réduire la taille sur mobile */
+    margin-bottom: 30px;
   }
 `;
 
@@ -102,58 +122,62 @@ const Technologies = styled.p`
 
 const Education = () => {
   return (
-    <SectionContainer className="fade-in">
-      
-      {/* Colonne Expérience Professionnelle */}
-      <Column>
-        <SectionTitle>Expérience Professionnelle</SectionTitle>
+    <PageContainer className="fade-in">
+      {/* Title of the entire section */}
+      <ExperienceTitle>Mon Parcours</ExperienceTitle>
 
-        <Item>
-          <ItemTitle>Développeur Full Stack</ItemTitle>
-          <Institution>Comeca - 1 an (CDI)</Institution>
-          <Date>2022 - 2023</Date>
-          <Description>
-            Conception et développement de solutions logicielles personnalisées pour répondre aux besoins des clients dans le secteur industriel.
-          </Description>
-          <Technologies>Technologies : Python, C#, WinCC, Windev</Technologies>
-        </Item>   
+      {/* Conteneur pour l'expérience professionnelle et la formation */}
+      <SectionContainer>
+        {/* Colonne Expérience Professionnelle */}
+        <Column>
+          <SectionTitle>Expérience Professionnelle</SectionTitle>
 
-        <Item>
-          <ItemTitle>Développeur Full Stack</ItemTitle>
-          <Institution>Comeca - 1 an (Alternance)</Institution>
-          <Date>2021 - 2022</Date>
-          <Description>
-            Développement d'applications web full stack en utilisant des technologies modernes pour divers projets industriels.
-          </Description>
-          <Technologies>Technologies : HTML, CSS, JavaScript, ExpressJs, NodeJs</Technologies>
-        </Item>
+          <Item>
+            <ItemTitle>Développeur Full Stack</ItemTitle>
+            <Institution>Comeca - 1 an (CDI)</Institution>
+            <Date>2022 - 2023</Date>
+            <Description>
+              Conception et développement de solutions logicielles personnalisées pour répondre aux besoins des clients dans le secteur industriel.
+            </Description>
+            <Technologies>Technologies : Python, C#, WinCC, Windev</Technologies>
+          </Item>
 
-      </Column>
+          <Item>
+            <ItemTitle>Développeur Full Stack</ItemTitle>
+            <Institution>Comeca - 1 an (Alternance)</Institution>
+            <Date>2021 - 2022</Date>
+            <Description>
+              Développement d'applications web full stack en utilisant des technologies modernes pour divers projets industriels.
+            </Description>
+            <Technologies>Technologies : HTML, CSS, JavaScript, ExpressJs, NodeJs</Technologies>
+          </Item>
+        </Column>
 
-      {/* Colonne Formation */}
-      <Column>
-        <SectionTitle>Formation & Diplômes</SectionTitle>
-        
-        <Item>
-          <ItemTitle>Bachelor Concepteur Développeur d'Applications</ItemTitle>
-          <Institution>CESI Dijon</Institution>
-          <Date>De septembre 2022 à septembre 2023</Date>
-        </Item>
+        {/* Colonne Formation */}
+        <Column>
+          <SectionTitle>Formation & Diplômes</SectionTitle>
 
-        <Item>
-          <ItemTitle>BTS Systèmes Numériques, option Informatique et Réseaux</ItemTitle>
-          <Institution>Lycée Gustave Eiffel, Dijon</Institution>
-          <Date>De septembre 2020 à juillet 2022</Date>
-          <Date>Obtenu mention bien</Date>
-        </Item>
+          <Item>
+            <ItemTitle>Bachelor Concepteur Développeur d'Applications</ItemTitle>
+            <Institution>CESI Dijon</Institution>
+            <Date>De septembre 2022 à septembre 2023</Date>
+          </Item>
 
-        <Item>
-          <ItemTitle>Baccalauréat Scientifique, Option Sciences de l'Ingénieur</ItemTitle>
-          <Institution>Lycée Gustave Eiffel, Dijon</Institution>
-          <Date>De 2019 à 2020</Date>
-        </Item>
-      </Column>
-    </SectionContainer>
+          <Item>
+            <ItemTitle>BTS Systèmes Numériques, option Informatique et Réseaux</ItemTitle>
+            <Institution>Lycée Gustave Eiffel, Dijon</Institution>
+            <Date>De septembre 2020 à juillet 2022</Date>
+            <Date>Obtenu mention bien</Date>
+          </Item>
+
+          <Item>
+            <ItemTitle>Baccalauréat Scientifique, Option Sciences de l'Ingénieur</ItemTitle>
+            <Institution>Lycée Gustave Eiffel, Dijon</Institution>
+            <Date>De 2019 à 2020</Date>
+          </Item>
+        </Column>
+      </SectionContainer>
+    </PageContainer>
   );
 };
 
