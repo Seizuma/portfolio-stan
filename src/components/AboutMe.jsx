@@ -154,7 +154,7 @@ const AboutMe = () => {
             <ExperienceText>2 ans d'expérience professionnelle</ExperienceText>
           </ExperienceContainer>
 
-          <DownloadButton href={`${process.env.PUBLIC_URL}/CV_2024-09-14_Stan_Le_Guen.pdf`} download>
+          <DownloadButton href={`${process.env.PUBLIC_URL}/CV_Stan_Le Guen.pdf`} download>
             Télécharger mon CV
           </DownloadButton>
         </AboutText>

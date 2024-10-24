@@ -131,7 +131,7 @@ const Contact = () => {
       </ContactInfo>
 
       <ContactOptions>
-        <OptionButton href={`${process.env.PUBLIC_URL}/CV_2024-09-14_Stan_Le_Guen.pdf`} download>
+        <OptionButton href={`${process.env.PUBLIC_URL}/CV_Stan_Le Guen.pdf`} download>
           <FaDownload /> Télécharger mon CV
         </OptionButton>
       </ContactOptions>
