@@ -197,7 +197,7 @@ const Header = () => {
             setActiveSection('education');
           }}
         >
-          Experience
+          Expérience
         </NavLink>
         <NavLink
           to="projects"
