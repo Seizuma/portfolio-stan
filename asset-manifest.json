@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/portfolio-stan/static/css/main.bad369f1.css",
+    "main.js": "/portfolio-stan/static/js/main.127d59da.js",
+    "index.html": "/portfolio-stan/index.html",
+    "main.bad369f1.css.map": "/portfolio-stan/static/css/main.bad369f1.css.map",
+    "main.127d59da.js.map": "/portfolio-stan/static/js/main.127d59da.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bad369f1.css",
+    "static/js/main.127d59da.js"
+  ]
+}
