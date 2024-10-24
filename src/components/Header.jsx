@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link as ScrollLink } from 'react-scroll';
-import { FaBars, FaTimes } from 'react-icons/fa'; // Icons for burger menu
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 // Navbar container
 const Navbar = styled.nav`
@@ -69,16 +69,14 @@ const NavLink = styled(ScrollLink)`
   }
 `;
 
-// Logo styling
-const Logo = styled.h1`
-  font-size: 2rem;
-  font-weight: bold;
-  white-space: nowrap; /* Ensure text doesn't wrap */
-  cursor: pointer; /* Indicate that the logo is clickable */
-
+// Logo styling as an image
+const LogoImage = styled.img`
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  
   @media (max-width: 768px) {
-    font-size: 1.8rem;
-    margin-left: 10px; /* Space to avoid overflow */
+    margin-left: 10px;
   }
 `;
 
@@ -93,9 +91,6 @@ const BurgerMenu = styled.div`
     font-size: 2rem;
     color: #fff;
     margin-right: 10px; /* Space to avoid overflow */
-    /* Optionally adjust position */
-    /* position: absolute;
-    right: 10px; */
   }
 `;
 
@@ -127,7 +122,7 @@ const Header = () => {
 
   const handleLogoClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    setMenuOpen(false); // Fermer le menu si ouvert
+    setMenuOpen(false); // Close the menu if it's open
   };
 
   useEffect(() => {
@@ -140,7 +135,12 @@ const Header = () => {
   return (
     <Navbar scrolled={scrolled ? "true" : undefined}>
       <Spacer />
-      <Logo onClick={handleLogoClick}>Stan</Logo> {/* Ajout du onClick */}
+      {/* Use LogoImage to display the favicon */}
+      <LogoImage
+        src={`${process.env.PUBLIC_URL}/favicon.ico`}
+        alt="Logo"
+        onClick={handleLogoClick}
+      />
 
       <BurgerMenu onClick={toggleMenu}>
         {menuOpen ? <FaTimes /> : <FaBars />}
@@ -171,7 +171,7 @@ const Header = () => {
             setActiveSection('aboutme');
           }}
         >
-          A Propos
+          À Propos
         </NavLink>
         <NavLink
           to="skills"
