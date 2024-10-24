@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaBriefcase } from 'react-icons/fa'; // Importer une icône pour l'expérience professionnelle
 
-// Conteneur pour la section "About Me"
 const AboutMeContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -10,13 +9,13 @@ const AboutMeContainer = styled.div`
   padding: 10px 20px;
   background: #000;
   min-height: 80vh;
-  margin-top: -200px;
+  margin-top: -600px;
 `;
 
-// Conteneur pour le texte à propos de toi
 const AboutText = styled.div`
   width: 50%;
   margin-left: 10%;
+  margin-top: -200px;
 `;
 
 const Title = styled.h2`
@@ -80,7 +79,7 @@ const DownloadButton = styled.a`
 
 const AboutMe = () => {
   return (
-    <AboutMeContainer>
+    <AboutMeContainer className="fade-in">
       <PhotoContainer>
         <Photo src="../../pictures/Pic2.png" alt="Photo de moi" />
       </PhotoContainer>
