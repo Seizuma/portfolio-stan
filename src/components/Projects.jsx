@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FaProjectDiagram, FaMicrophoneAlt, FaMusic, FaTree } from 'react-icons/fa'; // Ajout de FaTree pour Ecotron
+import { FaProjectDiagram, FaMicrophoneAlt, FaMusic, FaTree } from 'react-icons/fa';
 
 const ProjectsContainer = styled.div`
   text-align: center;
@@ -8,12 +8,22 @@ const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 50px 20px;
+
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+  }
 `;
 
 const ProjectGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+  }
 `;
 
 const ProjectCardStyled = styled.div`
@@ -31,30 +41,58 @@ const ProjectCardStyled = styled.div`
   &:hover {
     transform: scale(1.05);
   }
+
+  @media (max-width: 768px) {
+    padding: ${(props) => (props.$isExpanded ? '15px' : '8px')};
+    max-height: ${(props) => (props.$isExpanded ? '450px' : '130px')};
+  }
 `;
 
 const ProjectIcon = styled.div`
   font-size: 3rem;
   color: #daa520;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const ProjectTitle = styled.h3`
   margin-top: 10px;
+  font-size: 1.8rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const ProjectHeader = styled.h2`
-  font-size: 50px;
+  font-size: 3rem;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const ProjectDescription = styled.p`
   margin-top: 15px;
   color: #e8e6e3;
+  font-size: 1.2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const ProjectDetails = styled.div`
   margin-top: 10px;
   text-align: left;
   color: #e8e6e3;
+  font-size: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const Technologies = styled.p`
@@ -74,7 +112,7 @@ const ProjectLink = styled.a`
 
 const ProjectStatus = styled.p`
   margin-top: 10px;
-  color: ${(props) => (props.status === 'Terminé' ? '#28a745' : '#ffc107')}; /* Vert pour terminé, jaune pour en construction */
+  color: ${(props) => (props.status === 'Terminé' ? '#28a745' : '#ffc107')};
 `;
 
 const ProjectCard = ({ isExpanded, onClick, icon, title, description, details, link, status }) => (
@@ -85,7 +123,7 @@ const ProjectCard = ({ isExpanded, onClick, icon, title, description, details, l
       <>
         <ProjectDescription>{description}</ProjectDescription>
         {details && <ProjectDetails>{details}</ProjectDetails>}
-        {link && ( // N'affiche le lien que s'il existe
+        {link && (
           <ProjectLink href={link} target="_blank" rel="noopener noreferrer">Voir sur GitHub</ProjectLink>
         )}
         <ProjectStatus status={status}>{status}</ProjectStatus>
@@ -93,7 +131,6 @@ const ProjectCard = ({ isExpanded, onClick, icon, title, description, details, l
     )}
   </ProjectCardStyled>
 );
-
 
 const Projects = () => {
   const [expandedProject, setExpandedProject] = useState(null);
@@ -107,13 +144,12 @@ const Projects = () => {
       <ProjectHeader>Projets</ProjectHeader>
       <ProjectGrid>
 
-        {/* LearningBeatbox2.0 Project */}
         <ProjectCard
           isExpanded={expandedProject === 'learningbeatbox'}
           onClick={() => toggleExpand('learningbeatbox')}
           icon={<FaMicrophoneAlt />}
           title="LearningBeatbox 2.0"
-          description="Application permettant un meilleur apprentissage du beatbox via Machine Learning. Elle analyse la structure, les dynamiques et le genre musical pour aider à corriger les erreurs."
+          description="Application permettant un meilleur apprentissage du beatbox via Machine Learning."
           details={
             <>
               <p>Basé sur le projet Parrot.py</p>
@@ -125,13 +161,12 @@ const Projects = () => {
           status="En construction"
         />
 
-        {/* ResRel Project */}
         <ProjectCard
           isExpanded={expandedProject === 'resrel'}
           onClick={() => toggleExpand('resrel')}
           icon={<FaProjectDiagram />}
           title="ResRel"
-          description="ResRel est un projet visant à améliorer les relations entre les citoyens grâce à une plateforme de partage de ressources (images, PDF, vidéos, événements)."
+          description="ResRel est un projet visant à améliorer les relations entre les citoyens grâce à une plateforme de partage de ressources."
           details={
             <>
               <p><strong>Nombre de personnes sur le projet:</strong> 4</p>
@@ -142,13 +177,12 @@ const Projects = () => {
           status="Terminé"
         />
 
-        {/* GenreDiscovery Project */}
         <ProjectCard
           isExpanded={expandedProject === 'genrediscovery'}
           onClick={() => toggleExpand('genrediscovery')}
           icon={<FaMusic />}
           title="GenreDiscovery"
-          description="Application permettant la découverte et la répertorisation des genres musicaux via des suggestions, avec des artistes et des morceaux pour découvrir chaque genre."
+          description="Application permettant la découverte et la répertorisation des genres musicaux via des suggestions."
           details={
             <>
               <p>Basé sur le projet everynoise.com</p>
@@ -160,13 +194,12 @@ const Projects = () => {
           status="En construction"
         />
 
-        {/* Ecotron Project */}
         <ProjectCard
           isExpanded={expandedProject === 'ecotron'}
           onClick={() => toggleExpand('ecotron')}
           icon={<FaTree />}
           title="Ecotron"
-          description="Projet de BTS visant à étudier l'influence de l'environnement sur le taux de sève d'un arbre. Utilisation de cartes d'acquisition et de bases de données pour l'affichage sur une page web interactive."
+          description="Projet de BTS visant à étudier l'influence de l'environnement sur le taux de sève d'un arbre."
           details={
             <>
               <p><strong>Nombre de personnes sur le projet:</strong> 3</p>

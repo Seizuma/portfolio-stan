@@ -6,21 +6,36 @@ const AboutMeContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // padding: 100px 20px;
-  padding-top: -80px;
+  padding: 100px 20px;
   background: #000;
   min-height: 80vh;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 50px 20px;
+  }
 `;
 
 const AboutText = styled.div`
   width: 50%;
   margin-left: 10%;
   margin-top: -200px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+    text-align: center; /* Center text on mobile */
+  }
 `;
 
 const Title = styled.h2`
   font-size: 3rem; 
   margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    font-size: 2rem; /* Reduce title size on mobile */
+  }
 `;
 
 const Info = styled.p`
@@ -32,6 +47,10 @@ const Info = styled.p`
     font-weight: bold;
     color: #ffffff;
   }
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem; /* Reduce text size on mobile */
+  }
 `;
 
 const ExperienceContainer = styled.div`
@@ -39,12 +58,21 @@ const ExperienceContainer = styled.div`
   align-items: center;
   margin-top: 20px;
   font-size: 1.5rem;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    font-size: 1.2rem; /* Adjust text size */
+  }
 `;
 
 const ExperienceIcon = styled.div`
   margin-right: 10px;
   font-size: 2rem;
   color: #daa520;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem; /* Reduce icon size on mobile */
+  }
 `;
 
 const ExperienceText = styled.div`
@@ -56,13 +84,22 @@ const PhotoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 80%; /* Reduce image size on mobile */
+    margin-bottom: 20px; /* Add spacing on mobile */
+  }
 `;
 
 const Photo = styled.img`
   width: 100%;
-  max-width: 1000px;
+  max-width: 1000px; /* Adjust max-width */
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 768px) {
+    max-width: 300px; /* Reduce image size for mobile */
+  }
 `;
 
 const DownloadButton = styled.a`
@@ -80,6 +117,11 @@ const DownloadButton = styled.a`
   &:hover {
     background: #c09717; /* Change la couleur de fond en or plus foncé */
     transform: scale(1.05); /* Agrandit légèrement le bouton */
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem; /* Adjust button size on mobile */
+    padding: 10px 20px; /* Adjust padding on mobile */
   }
 `;
 
@@ -120,6 +162,5 @@ const AboutMe = () => {
     </>
   );
 };
-
 
 export default AboutMe;
