@@ -6,6 +6,13 @@ import { SiCsharp, SiFlask, SiElectron, SiExpress, SiPostman, SiTrello, SiFigma,
 const SkillsContainer = styled.div`
   text-align: center;
   padding: 50px 20px;
+  margin-top: -200px;
+`;
+
+const SkillsTitle = styled.h2`
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #fff; /* Couleur blanche pour le titre */
 `;
 
 const Category = styled.div`
@@ -20,11 +27,11 @@ const CategoryTitle = styled.h3`
 
 const SkillsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Utilisation de auto-fit pour adapter les cartes */
-  justify-content: center; /* Centre les éléments dans la grille */
-  gap: 30px; /* Augmente l'espacement entre les cartes */
-  max-width: 1000px; /* Limite la largeur totale des cartes pour ne pas s'étendre trop */
-  margin: 0 auto; /* Centre la grille par rapport au conteneur */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
 `;
 
 const SkillCard = styled.div`
@@ -53,8 +60,8 @@ const SkillName = styled.p`
 
 const Skills = () => {
   return (
-    <SkillsContainer>
-      <h2>Compétences</h2>
+    <SkillsContainer className="fade-in">
+      <SkillsTitle>Compétences</SkillsTitle>
 
       {/* Catégorie Frontend */}
       <Category>
