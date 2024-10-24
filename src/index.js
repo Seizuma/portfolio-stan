@@ -13,6 +13,9 @@ root.render(
 document.addEventListener("DOMContentLoaded", function () {
   const fadeIns = document.querySelectorAll('.fade-in');
 
+  // Check if the screen width is less than or equal to 768px (commonly used breakpoint for mobile devices)
+  const isMobile = window.innerWidth <= 768;
+
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -21,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }, {
-    threshold: 0.2 // 10% de la section doit être visible pour déclencher l'animation
+    threshold: isMobile ? 0.1 : 0.2 // Use 0.1 for mobile, and 0.2 for larger screens
   });
 
   fadeIns.forEach(section => {
