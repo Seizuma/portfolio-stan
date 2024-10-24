@@ -112,23 +112,33 @@ const DownloadButton = styled.a`
   font-weight: bold;
   margin-top: 20px;
   font-size: 1.2rem;
-  transition: background 0.3s ease, transform 0.3s ease; /* Ajoute une transition fluide */
+  transition: background 0.3s ease, transform 0.3s ease;
 
   &:hover {
-    background: #c09717; /* Change la couleur de fond en or plus foncé */
-    transform: scale(1.05); /* Agrandit légèrement le bouton */
+    background: #c09717;
+    transform: scale(1.05);
   }
 
   @media (max-width: 768px) {
-    font-size: 1rem; /* Adjust button size on mobile */
-    padding: 10px 20px; /* Adjust padding on mobile */
+    font-size: 1rem;
+    padding: 10px 20px;
   }
 `;
 
 const Anchor = styled.div`
   position: relative;
-  top: -200px; /* Compense la hauteur du header */
-  visibility: hidden; /* Rend l'ancre invisible */
+  top: -200px;
+  visibility: hidden;
+`;
+
+const Languages = styled.p`
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem; /* Reduce text size on mobile */
+  }
 `;
 
 const AboutMe = () => {
@@ -142,11 +152,6 @@ const AboutMe = () => {
 
         <AboutText>
           <Title>À propos de moi</Title>
-          <Info><span>Nom:</span> Stan Le Guen</Info>
-          <Info><span>Date de naissance:</span> 29/01/2003</Info>
-          <Info><span>Code postal:</span> 71100</Info>
-          <Info><span>Email:</span> stan.leguen.pro@gmail.com</Info>
-
           <ExperienceContainer>
             <ExperienceIcon>
               <FaBriefcase />
@@ -154,7 +159,12 @@ const AboutMe = () => {
             <ExperienceText>2 ans d'expérience professionnelle</ExperienceText>
           </ExperienceContainer>
 
-          <DownloadButton href={`${process.env.PUBLIC_URL}/CV_Stan_Le Guen.pdf`} download>
+          {/* Ajout des langues parlées */}
+          <Languages>
+            <Info><span>Langues :</span> Français (langue maternelle), Anglais (niveau B2)</Info>
+          </Languages>
+          <Info><span>Email:</span> stan.leguen.pro@gmail.com</Info>
+          <DownloadButton href={`${process.env.PUBLIC_URL}/CV_Stan_Le_Guen.pdf`} download>
             Télécharger mon CV
           </DownloadButton>
         </AboutText>
