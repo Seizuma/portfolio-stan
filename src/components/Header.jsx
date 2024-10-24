@@ -84,6 +84,16 @@ const Header = () => {
           Profil
         </NavLink>
         <NavLink
+          to="aboutme"
+          smooth={true}
+          duration={500}
+          spy={true}
+          active={activeSection === 'aboutme' ? "true" : undefined}
+          onSetActive={() => setActiveSection('aboutme')}
+        >
+          A Propos
+        </NavLink>
+        <NavLink
           to="skills"
           smooth={true}
           duration={500}
