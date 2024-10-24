@@ -1,4 +1,6 @@
-import React from 'react';
+// App.jsx
+
+import React, { useEffect } from 'react';
 import Header from './components/Header';
 import Profile from './components/Profile';
 import AboutMe from './components/AboutMe';
@@ -7,30 +9,60 @@ import Education from './components/Education';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import { Container, Section } from './styles';
-import { useSpring, animated } from 'react-spring';
+// Supprimer l'import de react-spring si vous ne l'utilisez plus
+// import { useSpring, animated } from 'react-spring';
 
 function App() {
-  const fadeIn = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 200 });
+  useEffect(() => {
+    const fadeIns = document.querySelectorAll('.fade-in');
+    const isMobile = window.innerWidth <= 768;
+
+    const observerCallback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observerOptions = {
+      threshold: isMobile ? 0.1 : 0.2
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    fadeIns.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Nettoyage de l'observateur lors du démontage du composant
+    return () => {
+      fadeIns.forEach(section => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
 
   return (
     <Container>
       <Header />
-      <Section as={animated.section} style={fadeIn} id="profile">
+      <Section className="fade-in" id="profile">
         <Profile />
       </Section>
-      <Section as={animated.section} style={fadeIn} id="aboutme">
+      <Section className="fade-in" id="aboutme">
         <AboutMe />
       </Section>
-      <Section as={animated.section} style={fadeIn} id="skills">
+      <Section className="fade-in" id="skills">
         <Skills />
       </Section>
-      <Section as={animated.section} style={fadeIn} id="education">
+      <Section className="fade-in" id="education">
         <Education />
       </Section>
-      <Section as={animated.section} style={fadeIn} id="projects">
+      <Section className="fade-in" id="projects">
         <Projects />
       </Section>
-      <Section as={animated.section} style={fadeIn} id="contact">
+      <Section className="fade-in" id="contact">
         <Contact />
       </Section>
     </Container>
