@@ -6,7 +6,7 @@ import { SiCsharp, SiFlask, SiElectron, SiExpress, SiPostman, SiTrello, SiFigma,
 const SkillsContainer = styled.div`
   text-align: center;
   padding: 50px 20px;
-  margin-top: -200px;
+
 `;
 
 const SkillsTitle = styled.h2`
