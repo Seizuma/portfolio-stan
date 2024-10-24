@@ -75,7 +75,14 @@ const DownloadButton = styled.a`
   font-weight: bold;
   margin-top: 20px;
   font-size: 1.2rem;
+  transition: background 0.3s ease, transform 0.3s ease; /* Ajoute une transition fluide */
+
+  &:hover {
+    background: #c09717; /* Change la couleur de fond en or plus foncé */
+    transform: scale(1.05); /* Agrandit légèrement le bouton */
+  }
 `;
+
 
 const AboutMe = () => {
   return (
