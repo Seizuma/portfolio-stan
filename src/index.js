@@ -10,24 +10,28 @@ root.render(
   </React.StrictMode>
 );
 
-document.addEventListener("DOMContentLoaded", function () {
-  const fadeIns = document.querySelectorAll('.fade-in');
+document.addEventListener("DOMContentLoaded", onDOMContentLoaded);
 
-  // Check if the screen width is less than or equal to 768px (commonly used breakpoint for mobile devices)
+function onDOMContentLoaded() {
+  const fadeIns = document.querySelectorAll('.fade-in');
   const isMobile = window.innerWidth <= 768;
 
-  const observer = new IntersectionObserver((entries, observer) => {
+  const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
         observer.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: isMobile ? 0.1 : 0.2 // Use 0.1 for mobile, and 0.2 for larger screens
-  });
+  };
+
+  const observerOptions = {
+    threshold: isMobile ? 0.1 : 0.2
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
 
   fadeIns.forEach(section => {
     observer.observe(section);
   });
-});
+}
