@@ -44,7 +44,7 @@ const CategoryTitle = styled.h3`
 
 const SkillsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
   justify-content: center;
   gap: 30px;
   max-width: 1000px;
