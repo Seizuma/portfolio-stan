@@ -6,10 +6,10 @@ const AboutMeContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  // padding: 100px 20px;
+  padding-top: -80px;
   background: #000;
   min-height: 80vh;
-  margin-top: -600px;
 `;
 
 const AboutText = styled.div`
@@ -83,34 +83,43 @@ const DownloadButton = styled.a`
   }
 `;
 
+const Anchor = styled.div`
+  position: relative;
+  top: -200px; /* Compense la hauteur du header */
+  visibility: hidden; /* Rend l'ancre invisible */
+`;
 
 const AboutMe = () => {
   return (
-    <AboutMeContainer className="fade-in">
-      <PhotoContainer>
-        <Photo src="../../pictures/Pic2.png" alt="Photo de moi" />
-      </PhotoContainer>
+    <>
+      <Anchor id="aboutme" />
+      <AboutMeContainer className="fade-in">
+        <PhotoContainer>
+          <Photo src="../../pictures/Pic2.png" alt="Photo de moi" />
+        </PhotoContainer>
 
-      <AboutText>
-        <Title>À propos de moi</Title>
-        <Info><span>Nom:</span> Stan Le Guen</Info>
-        <Info><span>Date de naissance:</span> 29/01/2003</Info>
-        <Info><span>Code postal:</span> 71100</Info>
-        <Info><span>Email:</span> stan.leguen.pro@gmail.com</Info>
+        <AboutText>
+          <Title>À propos de moi</Title>
+          <Info><span>Nom:</span> Stan Le Guen</Info>
+          <Info><span>Date de naissance:</span> 29/01/2003</Info>
+          <Info><span>Code postal:</span> 71100</Info>
+          <Info><span>Email:</span> stan.leguen.pro@gmail.com</Info>
 
-        <ExperienceContainer>
-          <ExperienceIcon>
-            <FaBriefcase />
-          </ExperienceIcon>
-          <ExperienceText>2 ans d'expérience professionnelle</ExperienceText>
-        </ExperienceContainer>
+          <ExperienceContainer>
+            <ExperienceIcon>
+              <FaBriefcase />
+            </ExperienceIcon>
+            <ExperienceText>2 ans d'expérience professionnelle</ExperienceText>
+          </ExperienceContainer>
 
-        <DownloadButton href="../../CV_2024-09-14_Stan_Le Guen.pdf" download>
-          Télécharger mon CV
-        </DownloadButton>
-      </AboutText>
-    </AboutMeContainer>
+          <DownloadButton href="../../CV_2024-09-14_Stan_Le Guen.pdf" download>
+            Télécharger mon CV
+          </DownloadButton>
+        </AboutText>
+      </AboutMeContainer>
+    </>
   );
 };
+
 
 export default AboutMe;
