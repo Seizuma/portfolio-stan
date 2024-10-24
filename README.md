@@ -4,7 +4,7 @@ Bienvenue sur mon portfolio ! Ce projet présente mes compétences, mes projets 
 
 ## 🔗 Lien du site
 
-[Visitez mon portfolio ici](https://stanleguen.github.io/portfolio-stan)
+[Visitez mon portfolio ici](https://seizuma.github.io/portfolio-stan)
 
 ## 🎯 Objectif
 
