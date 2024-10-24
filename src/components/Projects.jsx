@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FaProjectDiagram, FaMicrophoneAlt, FaMusic, FaTree } from 'react-icons/fa';
+import { FaProjectDiagram, FaMicrophoneAlt, FaMusic, FaTree, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const ProjectsContainer = styled.div`
   text-align: center;
@@ -17,8 +17,10 @@ const ProjectsContainer = styled.div`
 
 const ProjectGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  // grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  justify-content: center; /* Centre les projets horizontalement */
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -115,11 +117,22 @@ const ProjectStatus = styled.p`
   color: ${(props) => (props.status === 'Terminé' ? '#28a745' : '#ffc107')};
 `;
 
+const ToggleArrowDown = styled.div`
+  font-size: 1.5rem;
+  margin-top: -20px;
+  color: #daa520;
+`;
+const ToggleArrowUp = styled.div`
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #daa520;
+`;
+
 const ProjectCard = ({ isExpanded, onClick, icon, title, description, details, link, status }) => (
   <ProjectCardStyled $isExpanded={isExpanded} onClick={onClick}>
     <ProjectIcon>{icon}</ProjectIcon>
     <ProjectTitle>{title}</ProjectTitle>
-    {isExpanded && (
+    {isExpanded ? (
       <>
         <ProjectDescription>{description}</ProjectDescription>
         {details && <ProjectDetails>{details}</ProjectDetails>}
@@ -127,7 +140,10 @@ const ProjectCard = ({ isExpanded, onClick, icon, title, description, details, l
           <ProjectLink href={link} target="_blank" rel="noopener noreferrer">Voir sur GitHub</ProjectLink>
         )}
         <ProjectStatus status={status}>{status}</ProjectStatus>
+        <ToggleArrowUp><FaChevronUp /></ToggleArrowUp>
       </>
+    ) : (
+      <ToggleArrowDown><FaChevronDown /></ToggleArrowDown>
     )}
   </ProjectCardStyled>
 );
@@ -143,7 +159,6 @@ const Projects = () => {
     <ProjectsContainer className="fade-in">
       <ProjectHeader>Projets</ProjectHeader>
       <ProjectGrid>
-
         <ProjectCard
           isExpanded={expandedProject === 'learningbeatbox'}
           onClick={() => toggleExpand('learningbeatbox')}
@@ -208,7 +223,6 @@ const Projects = () => {
           }
           status="Terminé"
         />
-
       </ProjectGrid>
     </ProjectsContainer>
   );
