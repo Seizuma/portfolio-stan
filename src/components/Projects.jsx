@@ -36,7 +36,7 @@ const ProjectCardStyled = styled.div`
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.3s ease, max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
-  max-height: ${(props) => (props.$isExpanded ? '500px' : '150px')};
+  max-height: ${(props) => (props.$isExpanded ? '600px' : '150px')};
   
   &:hover {
     transform: scale(1.05);
