@@ -74,6 +74,7 @@ const Logo = styled.h1`
   font-size: 2rem;
   font-weight: bold;
   white-space: nowrap; /* Ensure text doesn't wrap */
+  cursor: pointer; /* Indicate that the logo is clickable */
 
   @media (max-width: 768px) {
     font-size: 1.8rem;
@@ -124,6 +125,11 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleLogoClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setMenuOpen(false); // Fermer le menu si ouvert
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -134,7 +140,7 @@ const Header = () => {
   return (
     <Navbar scrolled={scrolled ? "true" : undefined}>
       <Spacer />
-      <Logo>Stan</Logo>
+      <Logo onClick={handleLogoClick}>Stan</Logo> {/* Ajout du onClick */}
 
       <BurgerMenu onClick={toggleMenu}>
         {menuOpen ? <FaTimes /> : <FaBars />}
@@ -150,7 +156,6 @@ const Header = () => {
           onSetActive={() => {
             setMenuOpen(false);
             setActiveSection('profile');
-             
           }}
         >
           Profil
@@ -164,7 +169,6 @@ const Header = () => {
           onSetActive={() => {
             setMenuOpen(false);
             setActiveSection('aboutme');
-            
           }}
         >
           A Propos
@@ -178,7 +182,6 @@ const Header = () => {
           onSetActive={() => {
             setMenuOpen(false);
             setActiveSection('skills');
-            
           }}
         >
           Compétences
@@ -192,7 +195,6 @@ const Header = () => {
           onSetActive={() => {
             setMenuOpen(false);
             setActiveSection('education');
-            
           }}
         >
           Experience
@@ -206,7 +208,6 @@ const Header = () => {
           onSetActive={() => {
             setMenuOpen(false);
             setActiveSection('projects');
-            
           }}
         >
           Projets
