@@ -163,7 +163,7 @@ const AboutMe = () => {
           <Languages>
             <Info><span>Langues :</span> Français (langue maternelle), Anglais (niveau B2)</Info>
           </Languages>
-          <Info><span>Email:</span> stan.leguen.pro@gmail.com</Info>
+          <Info><span>Email :</span> stanleguen.pro@gmail.com</Info>
           <DownloadButton href={`${process.env.PUBLIC_URL}/CV_Stan_Le_Guen.pdf`} download>
             Télécharger mon CV
           </DownloadButton>
